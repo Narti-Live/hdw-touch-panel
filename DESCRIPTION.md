@@ -3,7 +3,7 @@
 Interaktiver Web-Prototyp der Touchpanel-Oberfläche für **Crestron VC-4 (2 Raumlizenzen)** auf dem **Crestron TS-770-B-S** (7", 1280 × 800).
 Grundlage ist ausschließlich die LV-Anforderungsliste (LV 4.6.11, 4.7.12, 4.10, 4.10.1–4.10.3). Keine Dropdown-Menüs: jede Auswahl ist ein sichtbarer Button.
 
-**Öffnen:** `index.html` im Browser (offline, eine Datei). Links außerhalb des Panels: Panel Seminarraum / Erfahrungsraum, „Timer 20 s“ (testet den 20-Minuten-Wechsel in 20 Sekunden), Vollbild. Diese Knöpfe gehören nicht zur Oberfläche.
+**Öffnen:** `index.html` (Umschalter LV-Version / Design A / B / C) oder direkt `lv/index.html` im Browser (offline, eine Datei). Links außerhalb des Panels: Panel Seminarraum / Erfahrungsraum, „Timer 20 s“ (testet den 20-Minuten-Wechsel in 20 Sekunden), Vollbild. Diese Knöpfe gehören nicht zur Oberfläche.
 
 ## Aufbau
 - **System aus → Systemstart-Symbol antippen → bestätigen →** Startablauf mit Schritten → direkt auf die erste Bedienebene (Start).
@@ -41,4 +41,4 @@ Raumtrennung: zusammengelegt → alle Deckenmikrofone auf Display 1 / Videokonfe
 - Login/HTTPS des Browserzugangs ist Sache des VC-4-Servers und hier nicht nachgebildet. Die Symbol- und Begriffsbibliothek zur Freigabe wäre der nächste Schritt.
 
 ## Screenshots
-Ordner `screenshots/`: `sem_*` = Seminarraum, `erf_*` = Erfahrungsraum, `en_*` = englische Oberfläche. Alle in Panelauflösung 1280 × 800.
+Ordner `screenshots/LV_version/` (alle auch in `HdW_touch_panel_screenshots.zip`): `sem_*` = Seminarraum, `erf_*` = Erfahrungsraum, `en_*` = englische Oberfläche. Alle in Panelauflösung 1280 × 800.
