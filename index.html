@@ -20,8 +20,7 @@ iframe{flex:1;width:100%;border:0;display:block;background:var(--bg)}
 </head><body><div class="wrap">
   <div class="bar" role="tablist">
     <b>HdW Touch Panel</b>
-    <button data-v="lv" role="tab">LV-Version (neu)</button>
-    <button data-v="a" role="tab">Design A</button>
+        <button data-v="a" role="tab">Design A</button>
     <button data-v="b" role="tab">Design B</button>
     <button data-v="c" role="tab">Design C</button>
     <span class="sp"></span>
@@ -33,21 +32,21 @@ iframe{flex:1;width:100%;border:0;display:block;background:var(--bg)}
 <script>
 (function(){
 var MODE='files';
-var SRC={lv:'lv/index.html',a:'v1/index.html?design=A',b:'v1/index.html?design=B',c:'v1/index.html?design=C'};
+var SRC={a:'panel/index.html?design=A',b:'panel/index.html?design=B',c:'panel/index.html?design=C'};
 var DATA={};
 function dec(b){return new TextDecoder().decode(Uint8Array.from(atob(b),function(c){return c.charCodeAt(0);}));}
 var cache={};
-function show(v){if(!SRC[v])v='lv';
+function show(v){if(!SRC[v])v='a';
   document.querySelectorAll('.bar button').forEach(function(b){var on=b.dataset.v===v;b.classList.toggle('on',on);b.setAttribute('aria-selected',on);});
   var f=document.getElementById('f');
   if(MODE==='files'){f.removeAttribute('srcdoc');f.src=SRC[v];}
-  else{if(!cache.lv)cache.lv=dec(DATA.lv);if(!cache.v1)cache.v1=dec(DATA.v1);
-    var html=v==='lv'?cache.lv:cache.v1.replace('<head>','<head><script>window.__DESIGN="'+v.toUpperCase()+'"<\/script>');
+  else{if(!cache.p)cache.p=dec(DATA.p);
+    var html=cache.p.replace('<head>','<head><script>window.__SKIN="'+v.toUpperCase()+'"<\/script>');
     f.srcdoc=html;}
   if(location.hash!=='#'+v){try{history.replaceState(null,'','#'+v);}catch(e){location.hash=v;}}}
 document.querySelectorAll('.bar button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.v);});});
 addEventListener('hashchange',function(){show(location.hash.slice(1));});
-show(location.hash.slice(1)||'lv');
+show(location.hash.slice(1)||'a');
 })();
 </script>
 
